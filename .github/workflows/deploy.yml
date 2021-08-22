@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     steps:
     - name: Checkout
@@ -28,6 +30,6 @@ jobs:
         export PATH="$HOME/.npm-global/bin:$PATH"
 
     - name: Deploy to GitHub Pages
-      run: ng deploy --repo=https://github.com/ltgr/hackphs2021.git --name="ltgr" --email=luke.rtong@gmail.com
+      run: ng deploy --repo=https://github.com/ltgr/hackphs2021.git
 
     
