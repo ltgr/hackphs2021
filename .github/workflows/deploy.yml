@@ -26,11 +26,8 @@ jobs:
         npm ci
         npm install -g @angular/cli
         export PATH="$HOME/.npm-global/bin:$PATH"
-        
-    - name: Git config
-      run: |
-        git config user.email "${{ secrets.GIT_CONFIG_EMAIL }}"
 
     - name: Deploy to GitHub Pages
-      run: ng deploy --cname=https://ltgr.github.io/hackphs2021/ --no-silent
+      run: ng deploy --repo=https://github.com/ltgr/hackphs2021.git --name="ltgr" --email=luke.rtong@gmail.com
+
     
