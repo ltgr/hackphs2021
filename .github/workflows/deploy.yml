@@ -30,7 +30,6 @@ jobs:
     - name: Git config
       run: |
         git config user.email "${{ secrets.GIT_CONFIG_EMAIL }}"
-        git config user.name "${{ secrets.GIT_CONFIG_NAME }}"
 
     - name: Deploy to GitHub Pages
       run: ng deploy --cname=https://ltgr.github.io/hackphs2021/ --no-silent
