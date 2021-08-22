@@ -26,22 +26,7 @@ jobs:
         npm ci
         npm install -g @angular/cli
         export PATH="$HOME/.npm-global/bin:$PATH"
-    
-    - name: Build
-      run: ng build --prod --sourceMap=false --base-href /hackphs2021/
-    
-    - name: Archive build
-      if: success()
-      uses: actions/upload-artifact@v1
-      with:
-        name: deploy_dist
-        path: dist
-    
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Deploy to GitHub Pages
-        run: ng deploy --cname=https://ltgr.github.io/hackphs2021/
+
+    - name: Deploy to GitHub Pages
+      run: ng deploy --cname=https://ltgr.github.io/hackphs2021/
     
