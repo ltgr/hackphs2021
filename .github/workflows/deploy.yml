@@ -44,6 +44,4 @@ jobs:
         uses: actions/checkout@v1
       - name: Deploy to GitHub Pages
         run: ng deploy --cname=https://ltgr.github.io/hackphs2021/
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
